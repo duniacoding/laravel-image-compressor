@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="	https://duniacoding.id/v2/basic/icon-big.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://duniacoding.id/v2/basic/icon-big.svg" width="400" alt="Laravel Logo"></a></p>
 
 ## About Project
 
