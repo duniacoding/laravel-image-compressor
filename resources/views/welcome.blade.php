@@ -31,28 +31,16 @@
             Image Compressor with Laravel
         </div>
         <div class="card-body">
+{{--            Success Message--}}
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    {!! session('success') !!}
+                </div>
+            @endif
+
 {{--            Form --}}
             <form method="POST" action="{{ route('compress-image') }}" enctype="multipart/form-data">
                 @csrf
-
-{{--                Select Type --}}
-                <div class="mb-3">
-                    <div class="mb-3">
-                        <label for="image_format" class="form-label">Tipe Konversi Gambar</label>
-                        <select id="image_format" name="image_format" class="form-select @error('image_format') is-invalid @enderror">
-                            <option value="jpg">JPG</option>
-                            <option value="png">PNG</option>
-                            <option value="webp">WEBP</option>
-                        </select>
-
-                        @error('image_format')
-                            <span class="invalid-feedback">
-                                {{$message}}
-                            </span>
-                        @enderror
-                    </div>
-                </div>
-
                 <div class="mb-3">
                     <label for="image" class="form-label">Input Gambar</label>
                     <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
@@ -62,6 +50,25 @@
                                 {{$message}}
                             </span>
                     @enderror
+                </div>
+
+
+{{--                Select Type --}}
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="image_format" class="form-label">Tipe Konversi Gambar (Ganti Format Gambar)</label>
+                        <select id="image_format" name="image_format" class="form-select @error('image_format') is-invalid @enderror">
+                            <option value="jpg">JPG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WEBP</option>
+                        </select>
+
+                        @error('image_format')
+                        <span class="invalid-feedback">
+                                {{$message}}
+                            </span>
+                        @enderror
+                    </div>
                 </div>
 
                 <button class="btn btn-primary" type="submit">
